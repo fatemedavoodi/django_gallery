@@ -66,7 +66,7 @@ def gallerysingle(request):
     category = Category.objects.all()
 
     context ={
-        'services': services,
+        'service': services,
         'photo':photographer,
         'subject_photo':subject_photo,
         'category': category,
