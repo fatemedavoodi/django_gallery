@@ -11,3 +11,10 @@ def contact(request):
 
 def services(request):
     return render(request,"root/services.html")
+
+def gallery(request):
+    return render(request,"root/gallery.html")
+
+def gallery_single(request):
+    return render(request,"root/gallery-single.html")
+
