@@ -29,7 +29,7 @@ class Category(models.Model):
         return self.name
     
 
-class photographer(models.Model):
+class Photographer(models.Model):
     info = models.ForeignKey(User,on_delete=models.CASCADE)
     skills = models.ManyToManyField(Skills)
     description = models.TextField()
@@ -44,8 +44,8 @@ class photographer(models.Model):
 class Services(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
-    
-    image = models.ImageField()
+    category = models.ManyToManyField(Category)
+    image = models.ImageField(upload_to='gallery',default='photo.jpg')
     subject_photo= models.ManyToManyField(Subject_photo)
     price = models.IntegerField(default=0)
     client = models.ManyToManyField(Client)
